@@ -15,9 +15,9 @@
 
 <body>
     <!-- Nav bar -->
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">StHub</a>
+            <a class="navbar-brand" draggable="false" href="#">StHub</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -26,60 +26,65 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" draggable="false" href="#">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" draggable="false" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Academics
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Notes</a></li>
-                            <li><a class="dropdown-item" href="#">Time Table</a></li>
-                            <li><a class="dropdown-item" href="#">Results</a></li>
+                            <li><a class="dropdown-item" draggable="false" href="#">Notes</a></li>
+                            <li><a class="dropdown-item" draggable="false" href="#">Time Table</a></li>
+                            <li><a class="dropdown-item" draggable="false" href="#">Results</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
+                        <a class="nav-link" draggable="false" href="#">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Resume Builder</a>
+                        <a class="nav-link" draggable="false" href="#">Resume Builder</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">CGPA Calculator</a>
+                        <a class="nav-link" draggable="false" href="#">CGPA Calculator</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">External Courses</a>
+                        <a class="nav-link" draggable="false" href="#">External Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Work Experience</a>
+                        <a class="nav-link" draggable="false" href="#">Work Experience</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Skills</a>
+                        <a class="nav-link" draggable="false" href="#">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Other Files</a>
+                        <a class="nav-link" draggable="false" href="#">Other Files</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
                     <!-- {% if current_user.is_authenticated %} -->
-                    <!-- <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            
-                            username
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
-                        </ul>
-                        <img src="/app/static/images/sthub-logos/png/logo-color.png" draggable="false" alt="mdo" width="32" height="32" class="rounded-circle">
+                    <!-- <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 dropdown">
+                            <a draggable="false" href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle show"
+                                data-bs-toggle="dropdown" aria-expanded="true">
+                                <img draggable="false" src="/app/static/images/sthub-logos/png/logo-color.png" alt="mdo" width="32"
+                                    height="32" class="rounded-circle">
+                            </a>
+                            <ul class="dropdown-menu text-small shadow show" data-popper-placement="bottom-end"
+                                style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 34px, 0px);">
+                                <li><a draggable="false" class="dropdown-item" href="#">Profile</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a draggable="false" class="dropdown-item" href="#">Sign out</a></li>
+                            </ul>
+                        </div>
                     </div> -->
                     <!-- {% else %} -->
                     <div class="text-end">
                         <button type="button" class="btn btn-outline-dark me-2">Login</button>
                         <button type="button" class="btn btn-warning">Sign-up</button>
-                      </div>
+                    </div>
                     <!-- {% endif %} -->
                 </form>
             </div>
@@ -87,12 +92,73 @@
     </nav>
 
     <!-- Body -->
-     
+    <main class="bd-content order-1 py-5" id="content">
+
+        <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+            <div class="col-lg-6 px-0">
+                <h1 class="display-4 fst-italic">Welcome to StHub!</h1>
+                <p class="lead my-3">Your one-stop solution for managing all aspects of student life, from tracking
+                    academics to managing projects and maintaining notes.</p>
+                <p class="lead mb-0"><a href="#" draggable="false" class="text-body-emphasis fw-bold">Manage your
+                        profile...</a></p>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-4 feature-box">
+                    <h2>Track Your Academics</h2>
+                    <p>Monitor your academic progress with personalized tools and reports.</p>
+                </div>
+                <div class="col-md-4 feature-box">
+                    <h2>Calculate Your CGPA</h2>
+                    <p>Use our CGPA calculator to keep track of your academic performance.</p>
+                </div>
+                <div class="col-md-4 feature-box">
+                    <h2>Maintain Notes</h2>
+                    <p>Keep all your study notes organized and easily accessible.</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4 feature-box">
+                    <h2>Manage Timetable</h2>
+                    <p>Plan and manage your schedule with our timetable feature.</p>
+                </div>
+                <div class="col-md-4 feature-box">
+                    <h2>Set Alerts</h2>
+                    <p>Receive alerts for important deadlines and tasks.</p>
+                </div>
+                <div class="col-md-4 feature-box">
+                    <h2>Track Projects</h2>
+                    <p>Keep track of your ongoing and upcoming projects.</p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4 feature-box">
+                    <h2>External Courses</h2>
+                    <p>Manage and track your progress in external courses.</p>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+
 
     <!-- Footer -->
-    <footer class="py-3  footer mt-auto bg-light fixed-bottom">
-        <div class="container">
+    <footer class="py-3  footer mt-auto bg-light">
+        <!-- <div class="container">
             <p class="text-center text-muted">© 2024 StHub</p>
+        </div> -->
+        <div class="container">
+            <footer class="py-3 my-4">
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                    <li class="nav-item"><a draggable="false" href="#"
+                            class="nav-link px-2 text-body-secondary">Home</a></li>
+                </ul>
+                <p class="text-center text-body-secondary">© 2024 StHub</p>
+            </footer>
         </div>
     </footer>
 
