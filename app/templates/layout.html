@@ -26,7 +26,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" draggable="false" href="{{url_for('main.home')}}">Home</a>
+                        <a class="nav-link active" aria-current="page" draggable="false"
+                            href="{{url_for('main.home')}}">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" draggable="false" href="#" role="button"
@@ -62,8 +63,8 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <!-- if current_user.is_authenticated -->
-                    <!-- <div class="d-flex align-items-center">
+                    {% if current_user.is_authenticated %}
+                    <div class="d-flex align-items-center">
                         <div class="flex-shrink-0 dropdown">
                             <a draggable="false" href="#"
                                 class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
@@ -80,18 +81,31 @@
                                 <li><a draggable="false" class="dropdown-item" href="#">Sign out</a></li>
                             </ul>
                         </div>
-                    </div> -->
-                    <!-- else -->
+                    </div>
+                    {% else %}
                     <div class="text-end">
-                        <a type="button" href="{{url_for('main.login')}}" class="btn btn-outline-dark me-2" onclick='' >Login</a>
+                        <a type="button" href="{{url_for('main.login')}}" class="btn btn-outline-dark me-2"
+                            onclick=''>Login</a>
                         <a type="button" href="{{url_for('main.register')}}" class="btn btn-warning">Sign-up</a>
                     </div>
-                    <!-- endif -->
+                    {% endif %}
                 </form>
-
             </div>
         </div>
     </nav>
+    <div class="container mt-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+
 
     <!-- Body -->
     {% block maincontent %}

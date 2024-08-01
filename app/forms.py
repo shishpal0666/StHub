@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField,PasswordField,SubmitField,BooleanField
 from wtforms.validators import DataRequired,Length,Email,EqualTo,ValidationError
+from db import get_db_connection
 import re
 
 class StrongPassword:
@@ -29,6 +30,30 @@ class RegisterForm(FlaskForm):
     password=PasswordField('Password',validators=[DataRequired(),StrongPassword()])
     conform_password=PasswordField('Conform Password',validators=[DataRequired(),EqualTo('password')])
     submit=SubmitField('Sign up')
+
+    def validate_username(self,username_check):
+        conn=get_db_connection()
+        cur=conn.cursor()
+        cur.execute("SELECT username FROM users WHERE username= %s",(username_check.data,))
+        user=cur.fetchone()
+        cur.close()
+        conn.close()
+
+        if user:
+            raise ValidationError("Username already Exists! Use different username.")
+    
+    def validate_email(self,email_check):
+        conn=get_db_connection()
+        cur=conn.cursor()
+        cur.execute("SELECT email FROM users WHERE email = %s",(email_check.data,))
+        email=cur.fetchone()
+        cur.close()
+        conn.close()
+
+        if email:
+            raise ValidationError("Email already Exists! Use different Email.")
+
+
 
 
 class LoginForm(FlaskForm):
