@@ -7,7 +7,7 @@ def create_tables():
             id SERIAL PRIMARY KEY,
             username VARCHAR(20) UNIQUE NOT NULL,
             email VARCHAR(120) UNIQUE NOT NULL,
-            password VARCHAR(60) NOT NULL,
+            password_hash VARCHAR(60) NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
         """,

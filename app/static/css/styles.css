@@ -12,3 +12,13 @@
 .layoutmain {
     background: linear-gradient(to right, #e2e2e2, #c9d6ff);
 }
+
+.floating-flash-message {
+    position: fixed;
+    margin-top: 50px;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+    width: auto;
+    max-width: 300px;
+}
