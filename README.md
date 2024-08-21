@@ -7,8 +7,6 @@ StHub is a comprehensive web application designed to help students manage their 
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -86,12 +84,3 @@ StHub is a comprehensive web application designed to help students manage their 
 4. **Project Management**: Add and update your projects and external courses.
 5. **Resume Building**: Use the built-in resume builder to create or update your resume.
 6. **Track Target Works**: Set goals and track progress with the Target Works feature.
-
-## Contributing
-
-Contributions are welcome! Please fork this repository and submit a pull request with your changes. For major changes, please open an issue to discuss what you would like to change.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
